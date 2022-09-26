@@ -5,7 +5,7 @@ import com.amirnadiv.mabaya.enums.Category;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "products")
+@Table(name = "PRODUCTS")
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

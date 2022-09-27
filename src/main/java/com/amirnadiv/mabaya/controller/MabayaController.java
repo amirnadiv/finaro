@@ -3,6 +3,7 @@ package com.amirnadiv.mabaya.controller;
 
 import com.amirnadiv.mabaya.dto.Campaign;
 import com.amirnadiv.mabaya.dto.Product;
+import com.amirnadiv.mabaya.service.CampaignService;
 import com.amirnadiv.mabaya.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 public class MabayaController {
 
     private ProductService productService;
+    private CampaignService campaignService;
 
     @GetMapping("/")
     public String index() {

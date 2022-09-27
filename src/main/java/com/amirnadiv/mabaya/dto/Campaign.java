@@ -4,9 +4,18 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Campaign {
+    private String id;
     private String name;
     private Date startDate;
     private Double bid;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -37,11 +46,11 @@ public class Campaign {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Campaign campaign = (Campaign) o;
-        return Objects.equals(name, campaign.name) && Objects.equals(startDate, campaign.startDate) && Objects.equals(bid, campaign.bid);
+        return Objects.equals(id, campaign.id) && Objects.equals(name, campaign.name) && Objects.equals(startDate, campaign.startDate) && Objects.equals(bid, campaign.bid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, startDate, bid);
+        return Objects.hash(id, name, startDate, bid);
     }
 }

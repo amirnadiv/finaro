@@ -3,8 +3,8 @@ package com.amirnadiv.mabaya.controller;
 
 import com.amirnadiv.mabaya.dto.Campaign;
 import com.amirnadiv.mabaya.dto.Product;
-import com.amirnadiv.mabaya.enums.Category;
-import org.springframework.stereotype.Controller;
+import com.amirnadiv.mabaya.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -12,6 +12,8 @@ import java.util.List;
 
 @RestController
 public class MabayaController {
+
+    private ProductService productService;
 
     @GetMapping("/")
     public String index() {
@@ -24,7 +26,7 @@ public class MabayaController {
     }
 
     @PostMapping("/serveAd")
-    public Product serveAd (@RequestParam Category category) {
+    public Product serveAd (@RequestBody Integer category) {
 
         return new Product();
     }

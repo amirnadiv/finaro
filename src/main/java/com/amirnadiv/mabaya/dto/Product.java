@@ -1,6 +1,7 @@
 package com.amirnadiv.mabaya.dto;
 
 import com.amirnadiv.mabaya.enums.Category;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Objects;
 

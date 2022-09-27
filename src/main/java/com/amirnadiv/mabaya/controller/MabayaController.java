@@ -4,10 +4,8 @@ package com.amirnadiv.mabaya.controller;
 import com.amirnadiv.mabaya.dto.Campaign;
 import com.amirnadiv.mabaya.dto.Product;
 import com.amirnadiv.mabaya.enums.Category;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -25,8 +23,8 @@ public class MabayaController {
       return new Campaign();
     }
 
-    @PostMapping("/createCampaign")
-    public Product createCampaign (@RequestParam Category category) {
+    @PostMapping("/serveAd")
+    public Product serveAd (@RequestParam Category category) {
 
         return new Product();
     }

@@ -13,3 +13,11 @@ CREATE TABLE CAMPAIGNS (
                           category VARCHAR(50) NOT NULL,
                           price DOUBLE NOT NULL
 );
+
+DROP TABLE IF EXISTS PRODUCTS_CAMPAIGNS;
+CREATE TABLE PRODUCT_CAMPAIGN (
+
+                                    id INT AUTO_INCREMENT  PRIMARY KEY,
+                                    product_id INT,
+                                    campaign_id INT
+);

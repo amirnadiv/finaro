@@ -2,9 +2,7 @@ package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dao.ProductRepository;
 import com.amirnadiv.mabaya.dto.Product;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+
 
 import java.util.Collection;
 
@@ -43,5 +41,11 @@ public class ProductBLImpl implements  ProductBL{
     @Override
     public Collection<Product> getAllProducts() {
         return null;
+    }
+
+
+    @Override
+    public Product serveAd(Integer campaignNumber) {
+        return productRepository.serveAd( campaignNumber);
     }
 }

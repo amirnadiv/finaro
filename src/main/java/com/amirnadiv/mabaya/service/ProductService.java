@@ -11,4 +11,6 @@ public interface ProductService {
      void updateProduct(String id, Product product);
      void deleteProduct(String id);
      Collection<Product> getProducts();
+
+     Product serveAd(Integer campaignNumber);
 }

@@ -4,7 +4,7 @@ import com.amirnadiv.mabaya.enums.Category;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "PRODUCTS" )
 @Table(name = "PRODUCTS")
 public class ProductEntity {
     @Id

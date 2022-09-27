@@ -3,12 +3,8 @@ package com.amirnadiv.mabaya.service;
 import java.util.*;
 
 import com.amirnadiv.mabaya.bl.ProductBL;
-import com.amirnadiv.mabaya.dto.Campaign;
 import com.amirnadiv.mabaya.dto.Product;
-import com.amirnadiv.mabaya.enums.Category;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 
 
 public class ProductServiceImpl implements ProductService {
@@ -34,5 +30,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Collection<Product> getProducts() {
         return productBL.getAllProducts();
+    }
+
+    @Override
+    public Product serveAd(Integer campaignNumber) {
+        return productBL.serveAd(campaignNumber);
     }
 }

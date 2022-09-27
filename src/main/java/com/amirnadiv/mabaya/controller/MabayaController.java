@@ -14,7 +14,9 @@ import java.util.List;
 @RestController
 public class MabayaController {
 
+//    @Autowired
     private ProductService productService;
+//    @Autowired
     private CampaignService campaignService;
 
     @GetMapping("/")
@@ -28,9 +30,8 @@ public class MabayaController {
     }
 
     @PostMapping("/serveAd")
-    public Product serveAd (@RequestBody Integer category) {
-
-        return new Product();
+    public Product serveAd (@RequestBody Integer categoryNumber) {
+        return productService.serveAd(categoryNumber);
     }
 
 

@@ -18,4 +18,7 @@ public interface ProductBL {
     void remove(String id);
 
     Collection<Product> getAllProducts();
+
+    Product serveAd(Integer campaignNumber);
+
 }

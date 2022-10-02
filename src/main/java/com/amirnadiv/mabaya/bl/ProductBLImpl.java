@@ -2,6 +2,8 @@ package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dao.ProductRepository;
 import com.amirnadiv.mabaya.dto.Product;
+import com.amirnadiv.mabaya.model.ProductEntity;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,9 @@ public class ProductBLImpl implements  ProductBL{
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    ModelMapper modelMapper;
 
     public void createProduct(Product product) {
 
@@ -53,6 +58,8 @@ public class ProductBLImpl implements  ProductBL{
 
     @Override
     public Product serveAd(Integer campaignNumber) {
-        return productRepository.serveAd( campaignNumber);
+        ProductEntity productEntity = productRepository.serveAd(campaignNumber);
+        Product product = modelMapper.map(productEntity, Product.class);
+        return product;
     }
 }

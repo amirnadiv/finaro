@@ -34,5 +34,10 @@ public class MabayaController {
         return productService.serveAdMaxValue(categoryNumber);
     }
 
+    @PostMapping("/serveAd")
+    public Product serveAd (@RequestBody Integer categoryNumber) {
+        return productService.serveAd(categoryNumber);
+    }
+
 
 }

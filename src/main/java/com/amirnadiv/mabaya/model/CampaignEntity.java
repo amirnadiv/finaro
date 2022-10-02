@@ -1,20 +1,22 @@
 package com.amirnadiv.mabaya.model;
 
+import com.amirnadiv.mabaya.enums.Category;
+
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "CAMPAIGNS")
 public class CampaignEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name="id")
     private Integer id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "startDate")
-    private Date startDate;
-    @Column(name = "bid")
-    private Double bid;
+    @Column(name = "title")
+    private String title;
+    @Column(name = "category")
+    private Category category;
+    @Column(name = "price")
+    private Double price;
 
     public Integer getId() {
         return id;
@@ -24,37 +26,37 @@ public class CampaignEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public Double getBid() {
-        return bid;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setBid(Double bid) {
-        this.bid = bid;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "CampaignEntity{" +
+        return "ProductEntity{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", startDate=" + startDate +
-                ", bid=" + bid +
+                ", title='" + title + '\'' +
+                ", category=" + category +
+                ", price=" + price +
                 '}';
     }
 }

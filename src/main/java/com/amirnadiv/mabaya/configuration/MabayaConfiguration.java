@@ -9,6 +9,7 @@ import com.amirnadiv.mabaya.service.CampaignService;
 import com.amirnadiv.mabaya.service.CampaignServiceImpl;
 import com.amirnadiv.mabaya.service.ProductService;
 import com.amirnadiv.mabaya.service.ProductServiceImpl;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -37,6 +38,8 @@ public class MabayaConfiguration {
     public CampaignBL campaignBL() {
         return new CampaignBLImpl();
     }
+
+
 
 
 

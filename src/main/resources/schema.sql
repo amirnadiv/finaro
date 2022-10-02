@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS PRODUCTS;
 CREATE TABLE PRODUCTS (
                       id INT AUTO_INCREMENT PRIMARY KEY,
                       name VARCHAR(50) NOT NULL,
-                      startDate DATE NOT NULL,
+                      start_date DATE NOT NULL,
                       bid DOUBLE NOT NULL
 );
 

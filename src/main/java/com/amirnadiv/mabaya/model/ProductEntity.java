@@ -1,21 +1,20 @@
 package com.amirnadiv.mabaya.model;
 
-import com.amirnadiv.mabaya.enums.Category;
-
 import javax.persistence.*;
+import java.util.Date;
 
-@Entity(name = "PRODUCTS" )
+@Entity
 @Table(name = "PRODUCTS")
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "title")
-    private String title;
-    @Column(name = "category")
-    private Category category;
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "start_date")
+    private Date startDate;
+    @Column(name = "bid")
+    private Double bid;
 
     public Integer getId() {
         return id;
@@ -25,37 +24,37 @@ public class ProductEntity {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Category getCategory() {
-        return category;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getBid() {
+        return bid;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setBid(Double bid) {
+        this.bid = bid;
     }
 
     @Override
     public String toString() {
-        return "ProductEntity{" +
+        return "CampaignEntity{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
-                ", category=" + category +
-                ", price=" + price +
+                ", name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", bid=" + bid +
                 '}';
     }
 }

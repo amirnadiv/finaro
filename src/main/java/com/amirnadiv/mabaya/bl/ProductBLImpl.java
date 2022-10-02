@@ -11,7 +11,7 @@ import java.util.Collection;
 @Component
 public class ProductBLImpl implements  ProductBL{
 
-
+    @Autowired
     ProductRepository productRepository;
 
     public void createProduct(Product product) {

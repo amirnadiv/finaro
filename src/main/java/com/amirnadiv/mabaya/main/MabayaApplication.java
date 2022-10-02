@@ -1,7 +1,9 @@
 package com.amirnadiv.mabaya.main;
 
+import com.amirnadiv.mabaya.bl.ProductBL;
 import com.amirnadiv.mabaya.configuration.MabayaConfiguration;
 import com.amirnadiv.mabaya.controller.MabayaController;
+import com.amirnadiv.mabaya.dao.ProductRepository;
 import com.amirnadiv.mabaya.dto.Campaign;
 import com.amirnadiv.mabaya.dto.Product;
 import com.amirnadiv.mabaya.service.ProductService;
@@ -16,17 +18,17 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication(scanBasePackages="com.amirnadiv.mabaya")
-@ComponentScan(basePackageClasses= {MabayaController.class, ProductService.class, Product.class, Campaign.class})
+@ComponentScan(basePackageClasses= {MabayaController.class, ProductService.class, ProductBL.class, Product.class, Campaign.class})
 @EntityScan(basePackageClasses = {com.amirnadiv.mabaya.model.ProductEntity.class,com.amirnadiv.mabaya.model.CampaignEntity.class,})
-@EnableJpaRepositories("com.amirnadiv.mabaya.dao")
+@EnableJpaRepositories(basePackageClasses = {com.amirnadiv.mabaya.dao.ProductRepository.class})
 public class MabayaApplication {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.register(MabayaConfiguration.class);
-        ctx.refresh();
-        //ProductService productService = ctx.getBean("productService",ProductServiceImpl.class);
-        ctx.close();
+//        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+//        ctx.register(MabayaConfiguration.class);
+//        ctx.refresh();
+//        //ProductService productService = ctx.getBean("productService",ProductServiceImpl.class);
+//        ctx.close();
         SpringApplication.run(MabayaApplication.class, args);
     }
 

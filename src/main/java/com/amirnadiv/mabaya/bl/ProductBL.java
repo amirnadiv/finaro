@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Component("productBL")
+@Service("productBL")
 @Configurable
 public interface ProductBL {
 

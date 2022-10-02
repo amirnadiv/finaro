@@ -5,12 +5,13 @@ import java.util.*;
 import com.amirnadiv.mabaya.bl.ProductBL;
 import com.amirnadiv.mabaya.dto.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductServiceImpl implements ProductService {
 
-
+    @Autowired
     ProductBL productBL;
 
     @Override

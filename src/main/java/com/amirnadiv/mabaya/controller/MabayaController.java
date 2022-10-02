@@ -14,9 +14,9 @@ import java.util.List;
 @RestController
 public class MabayaController {
 
-//    @Autowired
+    @Autowired
     private ProductService productService;
-//    @Autowired
+    @Autowired
     private CampaignService campaignService;
 
     @GetMapping("/")

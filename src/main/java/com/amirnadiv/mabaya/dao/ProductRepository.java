@@ -4,6 +4,7 @@ import com.amirnadiv.mabaya.dto.Product;
 import com.amirnadiv.mabaya.model.ProductEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 

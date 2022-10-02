@@ -1,11 +1,14 @@
 package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dto.Product;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Component
+@Component("productBL")
+@Configurable
 public interface ProductBL {
 
     void createProduct(Product product);

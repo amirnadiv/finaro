@@ -2,14 +2,16 @@ package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dao.ProductRepository;
 import com.amirnadiv.mabaya.dto.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
 import java.util.Collection;
 
-
+@Component
 public class ProductBLImpl implements  ProductBL{
 
-//    @Autowired
+
     ProductRepository productRepository;
 
     public void createProduct(Product product) {

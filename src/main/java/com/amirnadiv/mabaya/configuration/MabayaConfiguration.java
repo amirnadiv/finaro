@@ -10,9 +10,12 @@ import com.amirnadiv.mabaya.service.CampaignServiceImpl;
 import com.amirnadiv.mabaya.service.ProductService;
 import com.amirnadiv.mabaya.service.ProductServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
+@ComponentScan
 public class MabayaConfiguration {
 
     @Bean

@@ -1,9 +1,7 @@
 package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dao.CampaignRepository;
-import com.amirnadiv.mabaya.dao.ProductRepository;
 import com.amirnadiv.mabaya.dto.Campaign;
-import com.amirnadiv.mabaya.dto.Product;
 
 import java.util.Collection;
 

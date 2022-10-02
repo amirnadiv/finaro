@@ -5,7 +5,6 @@ import java.util.*;
 import com.amirnadiv.mabaya.bl.ProductBL;
 import com.amirnadiv.mabaya.dto.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,6 +31,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Collection<Product> getProducts() {
         return productBL.getAllProducts();
+    }
+
+    @Override
+    public Integer serveAdMaxValue(Integer campaignNumber) {
+        return productBL.serveAdMaxValue(campaignNumber);
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dto.Product;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -22,6 +21,7 @@ public interface ProductBL {
 
     Collection<Product> getAllProducts();
 
-    Product serveAd(Integer campaignNumber);
+    Integer serveAdMaxValue(Integer campaignNumber);
 
+    Product serveAd(Integer campaignNumber);
 }

@@ -47,6 +47,11 @@ public class ProductBLImpl implements  ProductBL{
 
 
     @Override
+    public Integer serveAdMaxValue(Integer campaignNumber) {
+        return productRepository.serveAdMaxValue( campaignNumber);
+    }
+
+    @Override
     public Product serveAd(Integer campaignNumber) {
         return productRepository.serveAd( campaignNumber);
     }

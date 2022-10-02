@@ -29,9 +29,9 @@ public class MabayaController {
       return new Campaign();
     }
 
-    @PostMapping("/serveAd")
-    public Product serveAd (@RequestBody Integer categoryNumber) {
-        return productService.serveAd(categoryNumber);
+    @PostMapping("/serveAdMaxValue")
+    public Integer serveAdMaxValue (@RequestBody Integer categoryNumber) {
+        return productService.serveAdMaxValue(categoryNumber);
     }
 
 

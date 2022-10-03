@@ -1,45 +1,54 @@
 package com.amirnadiv.mabaya.dto;
 
-import com.amirnadiv.mabaya.enums.Category;
-import org.springframework.context.annotation.Bean;
-
+import java.util.Date;
 import java.util.Objects;
 
 public class Product {
-    private String id;
-    private String title;
-    private Category category;
-    private Double price;
 
-    public String getId() {
+    private Long id;
+    private String name;
+    private Date startDate;
+    private Double bid;
+    private Integer category;
+
+    public Long getId() {
         return id;
     }
-    public void setId(String id) {
+
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Category getCategory() {
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Double getBid() {
+        return bid;
+    }
+
+    public void setBid(Double bid) {
+        this.bid = bid;
+    }
+
+    public Integer getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Integer category) {
         this.category = category;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 
     @Override
@@ -47,11 +56,22 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(id, product.id) && Objects.equals(title, product.title) && category == product.category && Objects.equals(price, product.price);
+        return Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(startDate, product.startDate) && Objects.equals(bid, product.bid) && Objects.equals(category, product.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, category, price);
+        return Objects.hash(id, name, startDate, bid, category);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", bid=" + bid +
+                ", category=" + category +
+                '}';
     }
 }

@@ -11,17 +11,17 @@ import java.util.Collection;
 public interface ProductBL {
 
     void createProduct(Product product);
-    void updateProduct(String id, Product product);
-    void deleteProduct(String id);
+    void updateProduct(Long id, Product product);
+    void deleteProduct(Long id);
     Collection<Product> getProducts();
 
-    void put(String id, Product shirt);
+    void put(Long id, Product shirt);
 
-    void remove(String id);
+    void remove(Long id);
 
     Collection<Product> getAllProducts();
 
     Integer serveAdMaxValue(Integer campaignNumber);
 
-    Product serveAd(Integer campaignNumber);
+    Product serveAd(Integer categoryNumber);
 }

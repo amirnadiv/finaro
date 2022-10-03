@@ -8,6 +8,7 @@ import java.util.Date;
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name="id")
     private Integer id;
     @Column(name = "name")
     private String name;
@@ -15,6 +16,8 @@ public class ProductEntity {
     private Date startDate;
     @Column(name = "bid")
     private Double bid;
+    @Column(name="category")
+    private Integer category;
 
     public Integer getId() {
         return id;
@@ -48,13 +51,22 @@ public class ProductEntity {
         this.bid = bid;
     }
 
+    public Integer getCategory() {
+        return category;
+    }
+
+    public void setCategory(Integer category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
-        return "CampaignEntity{" +
+        return "ProductEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", startDate=" + startDate +
                 ", bid=" + bid +
+                ", category=" + category +
                 '}';
     }
 }

@@ -10,11 +10,11 @@ import java.util.Collection;
 @Configurable
 public interface ProductService {
      void createProduct(Product product);
-     void updateProduct(String id, Product product);
-     void deleteProduct(String id);
+     void updateProduct(Long id, Product product);
+     void deleteProduct(Long id);
      Collection<Product> getProducts();
 
      Integer serveAdMaxValue(Integer campaignNumber);
 
-     Product serveAd(Integer campaignNumber);
+     Product serveAd(Integer categoryNumber);
 }

@@ -18,13 +18,13 @@ public class ProductServiceImpl implements ProductService {
         productBL.put(product.getId(), product);
     }
     @Override
-    public void updateProduct(String id, Product product) {
+    public void updateProduct(Long id, Product product) {
         productBL.remove(id);
         product.setId(id);
         productBL.put(id, product);
     }
     @Override
-    public void deleteProduct(String id) {
+    public void deleteProduct(Long id) {
         productBL.remove(id);
 
     }
@@ -39,8 +39,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product serveAd(Integer campaignNumber) {
+    public Product serveAd(Integer categoryNumber) {
 
-        return productBL.serveAd(campaignNumber);
+        return productBL.serveAd(categoryNumber);
     }
 }

@@ -23,11 +23,11 @@ public class ProductBLImpl implements  ProductBL{
 
     }
 
-    public void updateProduct(String id, Product product) {
+    public void updateProduct(Long id, Product product) {
 
     }
 
-    public void deleteProduct(String id) {
+    public void deleteProduct(Long id) {
 
     }
 
@@ -36,12 +36,12 @@ public class ProductBLImpl implements  ProductBL{
     }
 
     @Override
-    public void put(String id, Product shirt) {
+    public void put(Long id, Product shirt) {
 
     }
 
     @Override
-    public void remove(String id) {
+    public void remove(Long id) {
 
     }
 
@@ -57,9 +57,13 @@ public class ProductBLImpl implements  ProductBL{
     }
 
     @Override
-    public Product serveAd(Integer campaignNumber) {
-        ProductEntity productEntity = productRepository.serveAd(campaignNumber);
-        Product product = modelMapper.map(productEntity, Product.class);
+    public Product serveAd(Integer categoryNumber) {
+        ProductEntity productEntity = productRepository.serveAd(categoryNumber);
+        Product product;
+        if (productEntity !=null) {
+            product = modelMapper.map(productEntity, Product.class);
+        }
+        else {product = new Product(); }
         return product;
     }
 }

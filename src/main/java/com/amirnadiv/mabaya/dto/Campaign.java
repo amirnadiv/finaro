@@ -1,13 +1,18 @@
 package com.amirnadiv.mabaya.dto;
 
+import com.amirnadiv.mabaya.model.ProductEntity;
+
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Campaign {
     private String id;
     private String name;
-    private Date startDate;
+    private LocalDateTime startDate;
     private Double bid;
+    private List<Product> products;
 
     public String getId() {
         return id;
@@ -25,11 +30,11 @@ public class Campaign {
         this.name = name;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
@@ -41,16 +46,24 @@ public class Campaign {
         this.bid = bid;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Campaign campaign = (Campaign) o;
-        return Objects.equals(id, campaign.id) && Objects.equals(name, campaign.name) && Objects.equals(startDate, campaign.startDate) && Objects.equals(bid, campaign.bid);
+        return Objects.equals(id, campaign.id) && Objects.equals(name, campaign.name) && Objects.equals(startDate, campaign.startDate) && Objects.equals(bid, campaign.bid) && Objects.equals(products, campaign.products);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, startDate, bid);
+        return Objects.hash(id, name, startDate, bid, products);
     }
 }

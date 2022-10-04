@@ -3,10 +3,13 @@ package com.amirnadiv.mabaya.service;
 import com.amirnadiv.mabaya.bl.CampaignBL;
 import com.amirnadiv.mabaya.dto.Campaign;
 import com.amirnadiv.mabaya.dto.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 @Component
 public class CampaignServiceImpl implements CampaignService {
@@ -15,14 +18,12 @@ public class CampaignServiceImpl implements CampaignService {
     CampaignBL campaignBL;
 
     @Override
-    public void createCampaign(Campaign campaign) {
-        campaignBL.put(campaign.getId(), campaign);
+    public Campaign createCampaign(String name, LocalDateTime startDate, List<Product> products, Double bid) {
+        return campaignBL.createCampaign( name,   startDate,  products,   bid);
     }
     @Override
     public void updateCampaign(String id, Campaign campaign) {
-        campaignBL.remove(id);
-        campaign.setId(id);
-        campaignBL.put(id, campaign);
+
     }
     @Override
     public void deleteCampaign(String id) {

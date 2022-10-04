@@ -1,8 +1,11 @@
 package com.amirnadiv.mabaya.model;
 
+import com.amirnadiv.mabaya.dto.Product;
 import com.amirnadiv.mabaya.enums.Category;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "CAMPAIGNS")
@@ -11,12 +14,17 @@ public class CampaignEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name="id")
     private Integer id;
-    @Column(name = "title")
-    private String title;
+    @Column(name = "name")
+    private String name;
     @Column(name = "category")
     private Category category;
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "bid")
+    private Double bid;
+    @Column(name = "start_date")
+    private Date startDate;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<ProductEntity> products;
 
     public Integer getId() {
         return id;
@@ -26,12 +34,12 @@ public class CampaignEntity {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Category getCategory() {
@@ -42,21 +50,30 @@ public class CampaignEntity {
         this.category = category;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getBid() {
+        return bid;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setBid(Double bid) {
+        this.bid = bid;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     @Override
     public String toString() {
-        return "ProductEntity{" +
+        return "CampaignEntity{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", name='" + name + '\'' +
                 ", category=" + category +
-                ", price=" + price +
+                ", bid=" + bid +
+                ", startDate=" + startDate +
                 '}';
     }
 }

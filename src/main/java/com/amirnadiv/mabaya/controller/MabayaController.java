@@ -7,8 +7,7 @@ import com.amirnadiv.mabaya.service.CampaignService;
 import com.amirnadiv.mabaya.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -25,8 +24,8 @@ public class MabayaController {
     }
 
     @PostMapping("/createCampaign")
-    public Campaign createCampaign (@RequestParam String name, @RequestParam Date startDate, @RequestParam List<Product> products, @RequestParam Double bid) {
-      return new Campaign();
+    public Campaign createCampaign (@RequestParam String name, @RequestParam LocalDateTime startDate, @RequestParam List<Product> products, @RequestParam Double bid) {
+      return campaignService.createCampaign(name,  startDate, products, bid);
     }
 
     @PostMapping("/serveAdMaxValue")

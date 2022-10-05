@@ -11,9 +11,7 @@ import java.util.Collection;
 public interface CampaignService {
      Campaign createCampaign(Campaign campaign);
 
-     void updateCampaign(String id, Campaign campaign);
-
      void deleteCampaign(String id);
 
-     Collection<Campaign> getCampaigns();
+     Collection<Campaign> getAllCampaigns();
 }

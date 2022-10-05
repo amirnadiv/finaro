@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Component
@@ -47,7 +47,14 @@ public class ProductBLImpl implements  ProductBL{
 
     @Override
     public Collection<Product> getAllProducts() {
-        return null;
+        Iterable<ProductEntity> productEntities = productRepository.findAll();
+        Collection<Product> productCollection = new ArrayList<>();
+        for (ProductEntity productEntity : productEntities) {
+            Product product = modelMapper.map(productEntity, Product.class);
+            productCollection.add(product);
+        }
+
+        return productCollection;
     }
 
 

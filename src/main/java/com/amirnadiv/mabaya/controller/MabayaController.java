@@ -8,6 +8,8 @@ import com.amirnadiv.mabaya.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @RestController
 public class MabayaController {
 
@@ -36,6 +38,16 @@ public class MabayaController {
     @PostMapping("/serveAd")
     public Product serveAd(@RequestBody Integer categoryNumber) {
         return productService.serveAd(categoryNumber);
+    }
+
+    @GetMapping("/getAllCampaigns")
+    public Collection<Campaign> getAllCampaigns() {
+        return campaignService.getAllCampaigns();
+    }
+
+    @GetMapping("/getAllProducts")
+    public Collection<Product> getAllProducts() {
+        return productService.getAllProducts();
     }
 
 

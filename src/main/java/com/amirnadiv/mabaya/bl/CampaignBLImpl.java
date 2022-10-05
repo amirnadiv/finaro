@@ -37,11 +37,7 @@ public class CampaignBLImpl implements CampaignBL {
 
         campaignEntity = campaignRepository.save(campaignEntity);
         Campaign newCampaign;
-        if (campaignEntity != null) {
-            newCampaign = modelMapper.map(campaignEntity, Campaign.class);
-        } else {
-            newCampaign = new Campaign();
-        }
+        newCampaign = modelMapper.map(campaignEntity, Campaign.class);
         return newCampaign;
 
 
@@ -68,6 +64,13 @@ public class CampaignBLImpl implements CampaignBL {
 
     @Override
     public Collection<Campaign> getAllCampaigns() {
-        return null;
+        Iterable<CampaignEntity> campaignEntities = campaignRepository.findAll();
+        Collection<Campaign> campaignCollection = new ArrayList<>();
+        for (CampaignEntity campaignEntity : campaignEntities) {
+            Campaign campaign = modelMapper.map(campaignEntity, Campaign.class);
+            campaignCollection.add(campaign);
+        }
+
+        return campaignCollection;
     }
 }

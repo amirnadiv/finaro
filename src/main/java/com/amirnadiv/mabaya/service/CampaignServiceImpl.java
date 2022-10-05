@@ -19,18 +19,14 @@ public class CampaignServiceImpl implements CampaignService {
         return campaignBL.createCampaign(campaign);
     }
 
-    @Override
-    public void updateCampaign(String id, Campaign campaign) {
 
-    }
     @Override
     public void deleteCampaign(String id) {
         campaignBL.remove(id);
-
     }
 
     @Override
-    public Collection<Campaign> getCampaigns() {
+    public Collection<Campaign> getAllCampaigns() {
         return campaignBL.getAllCampaigns();
     }
 }

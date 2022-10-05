@@ -1,6 +1,7 @@
 package com.amirnadiv.mabaya.dto;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Product {
@@ -8,8 +9,8 @@ public class Product {
     private Long id;
     private String name;
     private Date startDate;
-    private Double bid;
     private Integer category;
+    private List<Campaign> campaigns;
 
     public Long getId() {
         return id;
@@ -35,14 +36,6 @@ public class Product {
         this.startDate = startDate;
     }
 
-    public Double getBid() {
-        return bid;
-    }
-
-    public void setBid(Double bid) {
-        this.bid = bid;
-    }
-
     public Integer getCategory() {
         return category;
     }
@@ -51,17 +44,25 @@ public class Product {
         this.category = category;
     }
 
+    public List<Campaign> getCampaigns() {
+        return campaigns;
+    }
+
+    public void setCampaigns(List<Campaign> campaigns) {
+        this.campaigns = campaigns;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(startDate, product.startDate) && Objects.equals(bid, product.bid) && Objects.equals(category, product.category);
+        return Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(startDate, product.startDate) && Objects.equals(category, product.category) && Objects.equals(campaigns, product.campaigns);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, startDate, bid, category);
+        return Objects.hash(id, name, startDate, category, campaigns);
     }
 
     @Override
@@ -70,8 +71,8 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", startDate=" + startDate +
-                ", bid=" + bid +
                 ", category=" + category +
+                ", campaigns=" + campaigns +
                 '}';
     }
 }

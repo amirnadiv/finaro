@@ -1,11 +1,12 @@
 package com.amirnadiv.mabaya.model;
 
 import com.amirnadiv.mabaya.enums.Category;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "CAMPAIGNS")
@@ -24,8 +25,12 @@ public class CampaignEntity {
     @Column(name = "start_date")
     @Nullable
     private LocalDateTime startDate;
+
+    @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER)
-    private List<ProductEntity> products;
+    @JoinColumn(name = "id")
+    private Set<ProductEntity> products;
+
 
     public Integer getId() {
         return id;
@@ -67,11 +72,11 @@ public class CampaignEntity {
         this.startDate = startDate;
     }
 
-    public List<ProductEntity> getProducts() {
+    public Set<ProductEntity> getProducts() {
         return products;
     }
 
-    public void setProducts(List<ProductEntity> products) {
+    public void setProducts(Set<ProductEntity> products) {
         this.products = products;
     }
 

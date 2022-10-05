@@ -14,8 +14,6 @@ public class ProductEntity {
     private String name;
     @Column(name = "start_date")
     private Date startDate;
-    @Column(name = "bid")
-    private Double bid;
     @Column(name = "category")
     private Integer category;
 
@@ -43,14 +41,6 @@ public class ProductEntity {
         this.startDate = startDate;
     }
 
-    public Double getBid() {
-        return bid;
-    }
-
-    public void setBid(Double bid) {
-        this.bid = bid;
-    }
-
     public Integer getCategory() {
         return category;
     }
@@ -65,7 +55,6 @@ public class ProductEntity {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", startDate=" + startDate +
-                ", bid=" + bid +
                 ", category=" + category +
                 '}';
     }

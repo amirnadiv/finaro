@@ -1,11 +1,11 @@
 package com.amirnadiv.mabaya.service;
 
-import java.util.*;
-
 import com.amirnadiv.mabaya.bl.ProductBL;
 import com.amirnadiv.mabaya.dto.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Collection;
 
 @Component
 public class ProductServiceImpl implements ProductService {
@@ -23,13 +23,15 @@ public class ProductServiceImpl implements ProductService {
         product.setId(id);
         productBL.put(id, product);
     }
+
     @Override
     public void deleteProduct(Long id) {
         productBL.remove(id);
 
     }
+
     @Override
-    public Collection<Product> getProducts() {
+    public Collection<Product> getAllProducts() {
         return productBL.getAllProducts();
     }
 

@@ -1,5 +1,6 @@
 package com.amirnadiv.mabaya.main;
 
+import com.amirnadiv.mabaya.bl.CampaignBL;
 import com.amirnadiv.mabaya.bl.ProductBL;
 import com.amirnadiv.mabaya.controller.MabayaController;
 import com.amirnadiv.mabaya.dto.Campaign;
@@ -14,9 +15,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
-@SpringBootApplication(scanBasePackages="com.amirnadiv.mabaya")
-@ComponentScan(basePackageClasses= {MabayaController.class, ProductService.class, ProductBL.class, Product.class, Campaign.class, ModelMapper.class})
-@EntityScan(basePackageClasses = {com.amirnadiv.mabaya.model.ProductEntity.class,com.amirnadiv.mabaya.model.CampaignEntity.class,})
+@SpringBootApplication(scanBasePackages = "com.amirnadiv.mabaya")
+@ComponentScan(basePackageClasses = {MabayaController.class, ProductService.class, ProductBL.class, CampaignBL.class, Product.class, Campaign.class, ModelMapper.class})
+@EntityScan(basePackageClasses = {com.amirnadiv.mabaya.model.ProductEntity.class, com.amirnadiv.mabaya.model.CampaignEntity.class,})
 @EnableJpaRepositories(basePackageClasses = {com.amirnadiv.mabaya.dao.ProductRepository.class})
 public class MabayaApplication {
 

@@ -1,17 +1,17 @@
 package com.amirnadiv.mabaya.bl;
 
 import com.amirnadiv.mabaya.dto.Campaign;
-import com.amirnadiv.mabaya.dto.Product;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.List;
 
-@Component
+@Service("campaignBL")
+@Configurable
 public interface CampaignBL {
 
-    Campaign createCampaign(String name, LocalDateTime startDate, List<Product> products, Double bid);
+    Campaign createCampaign(Campaign campaign);
+
     void updateCampaign(String id, Campaign campaign);
     void deleteCampaign(String id);
 

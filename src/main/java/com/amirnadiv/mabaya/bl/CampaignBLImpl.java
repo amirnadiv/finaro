@@ -7,14 +7,14 @@ import com.amirnadiv.mabaya.model.CampaignEntity;
 import com.amirnadiv.mabaya.model.ProductEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
-
-public class CampaignBLImpl implements  CampaignBL{
+@Component
+public class CampaignBLImpl implements CampaignBL {
 
     @Autowired
     CampaignRepository campaignRepository;
@@ -22,16 +22,27 @@ public class CampaignBLImpl implements  CampaignBL{
     @Autowired
     ModelMapper modelMapper;
 
-    public Campaign createCampaign(String name, LocalDateTime startDate, List<Product> products, Double bid) {
+    public Campaign createCampaign(Campaign campaign) {
 
-        CampaignEntity campaignEntity = campaignRepository.createCampaign( name,   startDate, products,   bid) ;
-        Campaign newCampaign;
-        if (campaignEntity !=null) {
-            newCampaign = modelMapper.map(campaignEntity, Campaign.class);
+        List<ProductEntity> productEntities = new ArrayList<>();
+        if (campaign.getProducts() != null) {
+            for (Product product : campaign.getProducts()) {
+                ProductEntity productEntity = modelMapper.map(product, ProductEntity.class);
+                productEntities.add(productEntity);
+            }
         }
-        else {newCampaign = new Campaign(); }
-        return newCampaign;
 
+        CampaignEntity campaignEntity = modelMapper.map(campaign, CampaignEntity.class);
+
+
+        campaignEntity = campaignRepository.save(campaignEntity);
+        Campaign newCampaign;
+        if (campaignEntity != null) {
+            newCampaign = modelMapper.map(campaignEntity, Campaign.class);
+        } else {
+            newCampaign = new Campaign();
+        }
+        return newCampaign;
 
 
     }

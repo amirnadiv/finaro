@@ -1,9 +1,6 @@
 package com.amirnadiv.mabaya.dto;
 
-import com.amirnadiv.mabaya.model.ProductEntity;
-
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 

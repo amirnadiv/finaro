@@ -7,8 +7,6 @@ import com.amirnadiv.mabaya.service.CampaignService;
 import com.amirnadiv.mabaya.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @RestController
 public class MabayaController {
@@ -23,18 +21,21 @@ public class MabayaController {
         return "Mabaya Application is Up and Running :-) ";
     }
 
-    @PostMapping("/createCampaign")
-    public Campaign createCampaign (@RequestParam String name, @RequestParam LocalDateTime startDate, @RequestParam List<Product> products, @RequestParam Double bid) {
-      return campaignService.createCampaign(name,  startDate, products, bid);
+    @RequestMapping(value = "/createCampaign", method = RequestMethod.POST,
+            produces = "application/json")
+//    public Campaign createCampaign (@RequestBody (required = false) String name, @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  LocalDateTime startDate, List<Product> products,  Double bid) {
+    public Campaign createCampaign(@RequestBody(required = false) Campaign campaign) {
+        Campaign newCampaign = campaignService.createCampaign(campaign);
+        return newCampaign;
     }
 
     @PostMapping("/serveAdMaxValue")
-    public Integer serveAdMaxValue (@RequestBody Integer categoryNumber) {
+    public Integer serveAdMaxValue(@RequestBody Integer categoryNumber) {
         return productService.serveAdMaxValue(categoryNumber);
     }
 
     @PostMapping("/serveAd")
-    public Product serveAd (@RequestBody Integer categoryNumber) {
+    public Product serveAd(@RequestBody Integer categoryNumber) {
         return productService.serveAd(categoryNumber);
     }
 

@@ -7,23 +7,23 @@ import java.util.Date;
 @Table(name = "PRODUCTS")
 public class ProductEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column (name="id")
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "start_date")
     private Date startDate;
     @Column(name = "bid")
     private Double bid;
-    @Column(name="category")
+    @Column(name = "category")
     private Integer category;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

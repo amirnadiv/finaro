@@ -23,7 +23,7 @@ public class MabayaController {
 
     @RequestMapping(value = "/createCampaign", method = RequestMethod.POST,
             produces = "application/json")
-    public Campaign createCampaign(@RequestBody(required = false) Campaign campaign) {
+    public Campaign createCampaign(@RequestBody Campaign campaign) {
         Campaign newCampaign = campaignService.createCampaign(campaign);
         return newCampaign;
     }

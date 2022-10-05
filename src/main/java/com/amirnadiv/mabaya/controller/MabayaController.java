@@ -23,7 +23,6 @@ public class MabayaController {
 
     @RequestMapping(value = "/createCampaign", method = RequestMethod.POST,
             produces = "application/json")
-//    public Campaign createCampaign (@RequestBody (required = false) String name, @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  LocalDateTime startDate, List<Product> products,  Double bid) {
     public Campaign createCampaign(@RequestBody(required = false) Campaign campaign) {
         Campaign newCampaign = campaignService.createCampaign(campaign);
         return newCampaign;

@@ -2,8 +2,9 @@
 
 DONE : 
 -H2 integration
--Campaign layers
--Product layers
+-Cards layers
+-CardHolders layers
+-Transactions layers
 -Query for api
 
 

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.amirnadiv</groupId>
-    <artifactId>MABAYA</artifactId>
+    <artifactId>FINARO</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MABAYA</name>
-    <description>MABAYA</description>
+    <name>FINARO</name>
+    <description>FINARO</description>
     <properties>
         <java.version>17</java.version>
     </properties>

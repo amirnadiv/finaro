@@ -1,6 +1,7 @@
 package com.amirnadiv.finaro.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "TRASACTIONS")
@@ -69,6 +70,19 @@ public class TransactionEntity {
 
     public void setCard(CardEntity card) {
         this.card = card;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TransactionEntity that = (TransactionEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(invoice, that.invoice) && Objects.equals(amount, that.amount) && Objects.equals(currency, that.currency) && Objects.equals(cardHolder, that.cardHolder) && Objects.equals(card, that.card);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, invoice, amount, currency, cardHolder, card);
     }
 
     @Override

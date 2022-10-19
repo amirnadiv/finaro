@@ -12,7 +12,7 @@ public class CardHolderEntity {
     private Long id;
     @Column(name = "name")
     private String name;
-    @Column(name = "bid")
+    @Column(name = "email")
     private String email;
 
     public Long getId() {

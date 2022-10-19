@@ -8,7 +8,7 @@ import java.util.Objects;
 public class TransactionEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @Column(name = "invoice")
@@ -17,10 +17,10 @@ public class TransactionEntity {
     private Double amount;
     @Column(name = "currency")
     private String currency;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cardholderid")
     private CardHolderEntity cardHolder;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cardid")
     private CardEntity card;
 

@@ -18,7 +18,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction createTransaction(Transaction transaction) {
-        return null;
+        return transactionBL.createTransaction(transaction);
     }
 
     @Override

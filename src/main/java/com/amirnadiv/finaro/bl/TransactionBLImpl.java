@@ -22,7 +22,10 @@ public class TransactionBLImpl implements TransactionBL {
 
     @Override
     public Transaction createTransaction(Transaction transaction) {
-        return null;
+        TransactionEntity entity = modelMapper.map(transaction, TransactionEntity.class);
+        TransactionEntity newEntity = transactionRepository.save(entity);
+        return modelMapper.map(newEntity, Transaction.class);
+
     }
 
     @Override

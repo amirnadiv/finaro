@@ -2,11 +2,11 @@ DROP ALL OBJECTS;
 
 CREATE TABLE IF NOT EXISTS CARDS
 (
-    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name       VARCHAR(100) NOT NULL,
-    pan        VARCHAR(100) NOT NULL,
-    expirydate VARCHAR(5)   NOT NULL,
-    cvv        VARCHAR(3)   NOT NULL
+    id     BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name   VARCHAR(100),
+    pan    VARCHAR(100),
+    expiry VARCHAR(5),
+    cvv    VARCHAR(3)
 );
 
 
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS CARDS
 CREATE TABLE IF NOT EXISTS CARDHOLDERS
 (
     id    BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name  VARCHAR(100) NOT NULL,
+    name  VARCHAR(100),
     email VARCHAR(100) NOT NULL
 );
 
@@ -30,6 +30,6 @@ CREATE TABLE IF NOT EXISTS TRASACTIONS
     invoice      VARCHAR(100) NOT NULL,
     amount       DOUBLE       NOT NULL,
     currency     VARCHAR(3)   NOT NULL,
-    cardholderid BIGINT       NOT NULL,
-    cardid       BIGINT       NOT NULL
+    cardholderid BIGINT,
+    cardid       BIGINT
 );

@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class CardEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "pan")
     private String pan;
-    @Column(name = "expirydate")
+    @Column(name = "expiry")
     private String expiryDate;
     @Column(name = "cvv")
     private String cvv;

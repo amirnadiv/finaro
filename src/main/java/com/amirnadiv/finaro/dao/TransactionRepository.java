@@ -9,4 +9,6 @@ public interface TransactionRepository extends CrudRepository<TransactionEntity,
 
     TransactionEntity findTransactionEntityById(Long id);
 
+    @Override
+    Iterable<TransactionEntity> findAll();
 }

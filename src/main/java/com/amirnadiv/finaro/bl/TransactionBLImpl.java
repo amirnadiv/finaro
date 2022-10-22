@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Optional;
 
 @Component
 public class TransactionBLImpl implements TransactionBL {
@@ -41,9 +40,9 @@ public class TransactionBLImpl implements TransactionBL {
     }
 
     @Override
-    public Optional<Transaction> getTransaction(Integer id) {
-        Optional<TransactionEntity> entity = transactionRepository.findById(Long.valueOf(id));
-        Transaction t = modelMapper.map(entity, Transaction.class);
-        return Optional.ofNullable(t);
+    public Transaction getTransaction(Long id) {
+        TransactionEntity byId = transactionRepository.findTransactionEntityById(Long.valueOf(id));
+        Transaction map = modelMapper.map(byId, Transaction.class);
+        return map;
     }
 }

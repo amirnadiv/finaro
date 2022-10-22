@@ -1,7 +1,12 @@
 package com.amirnadiv.finaro.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public class Transaction {
 
     private Long id;

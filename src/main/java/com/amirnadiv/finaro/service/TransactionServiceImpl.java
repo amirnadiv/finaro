@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
-import java.util.Optional;
 
 @Component
 public class TransactionServiceImpl implements TransactionService {
@@ -22,7 +21,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Optional<Transaction> getTransaction(Integer id) {
+    public Transaction getTransaction(Long id) {
         return transactionBL.getTransaction(id);
     }
 

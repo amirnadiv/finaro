@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.Optional;
 
 @RestController
 public class FinaroController {
@@ -31,7 +30,7 @@ public class FinaroController {
     }
 
     @PostMapping("/retrieve")
-    public Optional<Transaction> retrieve(@RequestBody Integer transactionId) {
+    public Transaction retrieve(@RequestBody Long transactionId) {
         return transactionService.getTransaction(transactionId);
     }
 

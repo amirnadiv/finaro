@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.Optional;
 
 @Service("transactionService")
 @Configurable
@@ -13,7 +12,7 @@ public interface TransactionService {
 
      Transaction createTransaction(Transaction transaction);
 
-    Optional<Transaction> getTransaction(Integer categoryNumber);
+    Transaction getTransaction(Long categoryNumber);
 
      Collection<Transaction> getAllTransactions();
 

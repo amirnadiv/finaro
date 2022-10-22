@@ -1,6 +1,7 @@
 package com.amirnadiv.finaro.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "CARDHOLDERS")
@@ -12,6 +13,7 @@ public class CardHolderEntity {
     private Long id;
     @Column(name = "name")
     private String name;
+    @Email
     @Column(name = "email")
     private String email;
 

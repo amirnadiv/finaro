@@ -1,5 +1,9 @@
 package com.amirnadiv.finaro.model;
 
+import com.amirnadiv.finaro.model.validations.PresentOrFuture;
+import org.hibernate.validator.constraints.LuhnCheck;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,9 +16,13 @@ public class CardEntity {
     private Long id;
     @Column(name = "name")
     private String name;
+    @LuhnCheck
     @Column(name = "pan")
     private String pan;
     @Column(name = "expiry")
+    @PresentOrFuture
+    @DateTimeFormat(pattern = "MMyy")
+    //@Temporal(TemporalType.DATE)
     private String expiryDate;
     @Column(name = "cvv")
     private String cvv;

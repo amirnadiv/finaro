@@ -1,6 +1,7 @@
 package com.amirnadiv.finaro.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +15,7 @@ public class TransactionEntity {
     @Column(name = "invoice")
     private Long invoice;
     @Column(name = "amount")
+    @Min(0L)
     private Double amount;
     @Column(name = "currency")
     private String currency;
